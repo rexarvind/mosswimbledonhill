@@ -120,7 +120,7 @@ body{
 
 .banner_sec {
     width: 100%;
-    background: url('../images/banner3.jpg');
+    background: url('../images/banner4.jpg');
     padding: 90px 0px;
     background-position: center;
     background-repeat: no-repeat;
@@ -359,6 +359,7 @@ body{
 	width: 100%;
 	background: none;
 	padding: 0px;
+    position:relative;
 }
 
 .rcard_pic img {
@@ -372,6 +373,24 @@ body{
 
 .rcard_pic img:hover{
     opacity: 1.0;
+}
+
+.rcard_review_box {
+    position:absolute;
+    top:10px;
+    right:25px;
+    color:#ffffff;
+    font-weight:600;
+    font-size:12px;
+}
+
+.rcard_review_box .rcard_review_title {
+    display:block;
+}
+.rcard_review_box .rcard_review_content img {
+    width:12px;
+    display:inline-block;
+    opacity:1;
 }
 
 .rcard_content {

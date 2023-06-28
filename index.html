@@ -14,15 +14,10 @@
 	<link rel="stylesheet" href="css/customselectmenu.css">
 	
 	<style>
-  /* styles used by the AutoComplete class */
-  .AutoCompleteBackgroundSearch	{background-color:white;}
-  .AutoCompleteHighlightSearch 	{background-color:#005696;color:white;font-size:<?=nFontSize;?>px;}
-  </style>
-  
-  
-  
-  
-  
+      /* styles used by the AutoComplete class */
+      .AutoCompleteBackgroundSearch	{background-color:white;}
+      .AutoCompleteHighlightSearch 	{background-color:#005696;color:white;font-size:<?=nFontSize;?>px;}
+      </style>
   
 </head>
 
@@ -59,7 +54,7 @@
 				<div class="row justify-content-center">
 					<div class="col-md-7 col-lg-7 wow col-sm-10 width80">
 						<div class="banner_box">
-							<h1> Welcome to Moss & Co Wimbledon Estate & Lettings Agency </h1>
+							<h1> Welcome to Moss & Co Lettings Agency </h1>
 							<p> We Strive To Lead Our Clients to Confidently Live Where They Want to Be. </p>
 							<center>
 								<a href="contact.html#contactform"><button class="button"> <span>Contact us</span> </button></a>
@@ -136,7 +131,7 @@
 	<div class="roomsrent_sec">
 			
 		<!-- Spinner while fetching data -->
-		<div class="text-center" id="results_spinner">
+		<div class="text-center" id="results_spinner" style="display:none;">
 			<div class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
 		</div>
 		
@@ -150,21 +145,203 @@
 			<div class="row">
 				
 				<!-- Search result (per property) -->
-				<div class="col-md-4 col-lg-4" style="display:none;" id="result_container">
+				<div class="col-md-4 col-lg-4">
 					<div class="rooms_card">
-						<div class="rcard_pic"> <img src="" /> </div>
+						<div class="rcard_pic">
+                            <img src="images/places/1.jpg" />
+                            <div class="rcard_review_box">
+                                <span class="rcard_review_title">5 Reviews</span>
+                                <span class="rcard_review_content">
+                                    4.8
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                </span>
+                            </div>
+                        </div>
 						<div class="rcard_content">
-							<h3> </h3>
+							<h3>Coloney Hatch Road, N11</h3>
 							<ul>
-								<li> <img src="" /> <span> </span> </li>
+								<li> <img src="images/ico4.svg" /> <span>3 Bedrooms</span> </li>
+                                <li> <img src="images/ico5.svg" /> <span>2 Bathrooms</span> </li>
+                                <li> <img src="images/ico6.svg" /> <span>1 Reception</span> </li>
+                                <li> <img src="images/ico7.svg" /> <span>Off Street</span> </li>
 							</ul>
 							<div class="content_foot"> 
-								<span> <h2> <b> </b> <span> </span> </h2> </span>
+								<span> <h2> <b>For Rent</b> <span>£2,395</span> </h2> </span>
 								<span> <button type="button" id="btndetails"> View Details <img src="images/ico3.svg" /> </button> </span> 
 							</div>
 						</div>
 					</div>
 				</div>
+
+
+                <div class="col-md-4 col-lg-4">
+                    <div class="rooms_card">
+                        <div class="rcard_pic">
+                            <img src="images/places/2.jpg" />
+                            <div class="rcard_review_box">
+                                <span class="rcard_review_title">5 Reviews</span>
+                                <span class="rcard_review_content">
+                                    4.8
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rcard_content">
+                            <h3>Coloney Hatch Road, N11</h3>
+                            <ul>
+                                <li> <img src="images/ico4.svg" /> <span>3 Bedrooms</span> </li>
+                                <li> <img src="images/ico5.svg" /> <span>2 Bathrooms</span> </li>
+                                <li> <img src="images/ico6.svg" /> <span>1 Reception</span> </li>
+                                <li> <img src="images/ico7.svg" /> <span>Off Street</span> </li>
+                            </ul>
+                            <div class="content_foot">
+                                <span> <h2> <b>For Rent</b> <span>£2,395</span> </h2> </span>
+                                <span> <button type="button" id="btndetails"> View Details <img src="images/ico3.svg" /> </button> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-lg-4">
+                    <div class="rooms_card">
+                        <div class="rcard_pic">
+                            <img src="images/places/3.jpg" />
+                            <div class="rcard_review_box">
+                                <span class="rcard_review_title">5 Reviews</span>
+                                <span class="rcard_review_content">
+                                    4.8
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rcard_content">
+                            <h3>Coloney Hatch Road, N11</h3>
+                            <ul>
+                                <li> <img src="images/ico4.svg" /> <span>3 Bedrooms</span> </li>
+                                <li> <img src="images/ico5.svg" /> <span>2 Bathrooms</span> </li>
+                                <li> <img src="images/ico6.svg" /> <span>1 Reception</span> </li>
+                                <li> <img src="images/ico7.svg" /> <span>Off Street</span> </li>
+                            </ul>
+                            <div class="content_foot">
+                                <span> <h2> <b>For Rent</b> <span>£2,395</span> </h2> </span>
+                                <span> <button type="button" id="btndetails"> View Details <img src="images/ico3.svg" /> </button> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-lg-4">
+                    <div class="rooms_card">
+                        <div class="rcard_pic">
+                            <img src="images/places/3.jpg" />
+                            <div class="rcard_review_box">
+                                <span class="rcard_review_title">5 Reviews</span>
+                                <span class="rcard_review_content">
+                                    4.8
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rcard_content">
+                            <h3>Coloney Hatch Road, N11</h3>
+                            <ul>
+                                <li> <img src="images/ico4.svg" /> <span>3 Bedrooms</span> </li>
+                                <li> <img src="images/ico5.svg" /> <span>2 Bathrooms</span> </li>
+                                <li> <img src="images/ico6.svg" /> <span>1 Reception</span> </li>
+                                <li> <img src="images/ico7.svg" /> <span>Off Street</span> </li>
+                            </ul>
+                            <div class="content_foot">
+                                <span> <h2> <b>For Rent</b> <span>£2,395</span> </h2> </span>
+                                <span> <button type="button" id="btndetails"> View Details <img src="images/ico3.svg" /> </button> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-lg-4">
+                    <div class="rooms_card">
+                        <div class="rcard_pic">
+                            <img src="images/places/1.jpg" />
+                            <div class="rcard_review_box">
+                                <span class="rcard_review_title">5 Reviews</span>
+                                <span class="rcard_review_content">
+                                    4.8
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rcard_content">
+                            <h3>Coloney Hatch Road, N11</h3>
+                            <ul>
+                                <li> <img src="images/ico4.svg" /> <span>3 Bedrooms</span> </li>
+                                <li> <img src="images/ico5.svg" /> <span>2 Bathrooms</span> </li>
+                                <li> <img src="images/ico6.svg" /> <span>1 Reception</span> </li>
+                                <li> <img src="images/ico7.svg" /> <span>Off Street</span> </li>
+                            </ul>
+                            <div class="content_foot">
+                                <span> <h2> <b>For Rent</b> <span>£2,395</span> </h2> </span>
+                                <span> <button type="button" id="btndetails"> View Details <img src="images/ico3.svg" /> </button> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-lg-4">
+                    <div class="rooms_card">
+                        <div class="rcard_pic">
+                            <img src="images/places/2.jpg" />
+                            <div class="rcard_review_box">
+                                <span class="rcard_review_title">5 Reviews</span>
+                                <span class="rcard_review_content">
+                                    4.8
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                    <img src="images/icons/star.svg">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="rcard_content">
+                            <h3>Coloney Hatch Road, N11</h3>
+                            <ul>
+                                <li> <img src="images/ico4.svg" /> <span>3 Bedrooms</span> </li>
+                                <li> <img src="images/ico5.svg" /> <span>2 Bathrooms</span> </li>
+                                <li> <img src="images/ico6.svg" /> <span>1 Reception</span> </li>
+                                <li> <img src="images/ico7.svg" /> <span>Off Street</span> </li>
+                            </ul>
+                            <div class="content_foot">
+                                <span> <h2> <b>For Rent</b> <span>£2,395</span> </h2> </span>
+                                <span> <button type="button" id="btndetails"> View Details <img src="images/ico3.svg" /> </button> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 				
 			</div>
 			
