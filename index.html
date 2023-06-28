@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Moss & Co Wimbledon</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="images/favicon.svg">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/swiper-bundle.8.4.4.min.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/customselectmenu.css">
+	
+	<style>
+  /* styles used by the AutoComplete class */
+  .AutoCompleteBackgroundSearch	{background-color:white;}
+  .AutoCompleteHighlightSearch 	{background-color:#005696;color:white;font-size:<?=nFontSize;?>px;}
+  </style>
+  
+  
+  
+  
+  
+  
+</head>
+
+<body>
+	
+	<!-- Floating Menu -->
+	<div class="header_sec">
+		<div class="head_bar wow fadeInDown">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<a class="navbar-brand" href="index.html"> <img src="images/logo1.png" /> </a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"> <img src="images/menubar.svg" /> </span> </button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item"> <a class="nav-link" href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/85/about-us"> About Us </a> </li>
+							<li class="nav-item"> <a class="nav-link" href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/92/sales"> Sales </a> </li>
+							<li class="nav-item"> <a class="nav-link" href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/87/lettings"> Lettings </a> </li>
+							<li class="nav-item"> <a class="nav-link" href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/88/management"> Manage </a> </li>
+							<li class="nav-item"> <a class="nav-link" href="contact.html"> Contact </a> </li>
+							<li class="nav-item"> <a class="nav-link btns" href="https://crizoconnect.co.uk/MossandCompany/property_search/register.php?bs"> Sign Up </a> </li>
+							<li class="nav-item"> <a class="nav-link transBtn" href="https://crizoconnect.co.uk/MossandCompany/mgt/login.php?bs"> Login <img src="images/ico3.svg" /> </a> </li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- Centred Banner -->
+	<div class="banner_sec">
+		<div class="container" id="banner_container">
+			<div class="banner_inside">
+				<div class="row justify-content-center">
+					<div class="col-md-7 col-lg-7 wow col-sm-10 width80">
+						<div class="banner_box">
+							<h1> Welcome to Moss & Co Wimbledon Estate & Lettings Agency </h1>
+							<p> We Strive To Lead Our Clients to Confidently Live Where They Want to Be. </p>
+							<center>
+								<a href="contact.html#contactform"><button class="button"> <span>Contact us</span> </button></a>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- Property Search Form -->
+	<!-- if you change anything in this div then you will need to change p_index.js and p_common.js -->
+	<div class="salerent_sec">
+		<div class="container">
+			<form id="searchform">
+				<div class="salerent_form">
+					<ul style="display:none;">
+						<li>
+							<input type="radio" id="intent_buy" name="intent" value="B">
+							<label for="intent_buy"> Buy </label>
+						</li>
+						<li>
+							<input type="radio" id="intent_rent" name="intent" value="R" checked>
+							<label for="intent_rent"> Rent </label>
+						</li>
+					</ul>
+					<div class="row" style="display: flex; align-items: flex-end; position:relative;/*needed for AreaDiv*/">
+						<div class="col-md-3 col-lg-3 width50">
+							<div class="form-group">
+								<label> Enter Area: </label>
+								<input type="text" class="form-control" id="Area" autocomplete="off" placeholder="" value="Wimbledon" /> </div>
+						</div>
+						
+						<div id="AreaDiv" style="position:absolute; left:50px; top:160px; min-width:205px; padding:5px 15px 10px; border-radius:20px; display:none; border:1px solid darkgrey; background-color:white; z-index:999999; cursor:pointer; text-align:left;">&nbsp;</div>
+						
+						<div class="col-md-3 col-lg-3 width50">
+							<div class="form-group">
+								<label> Bedrooms: </label>
+								<select id="Bedrooms">
+										<option value="">Any</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 col-lg-3 width50" id="intent_rent_price" style="display:inline;">
+							<div class="form-group">
+								<label> Max Price: </label>
+								<select id="Price-Rent">
+										<option value="">Any</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 col-lg-3 width50" id="intent_buy_price" style="display:none;">
+							<div class="form-group">
+								<label> Max Price: </label>
+								<select id="Price-Buy">
+										<option value="">Any</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 col-lg-3 width50">
+							<button type="button" id="btnsearch"> Search </button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<!-- Property Search Results -->
+	<!-- if you change anything in this div then you will need to change p_index.js -->
+	<div class="roomsrent_sec">
+			
+		<!-- Spinner while fetching data -->
+		<div class="text-center" id="results_spinner">
+			<div class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
+		</div>
+		
+		<!-- Message box -->
+		<div class="text-center" id="results_message" style="display:none;width:500px;margin:0 auto;"> </div>
+			
+		<!-- Search results -->
+		<div class="container" id="results_container">
+			
+			<!-- Search Results row (3-up) -->
+			<div class="row">
+				
+				<!-- Search result (per property) -->
+				<div class="col-md-4 col-lg-4" style="display:none;" id="result_container">
+					<div class="rooms_card">
+						<div class="rcard_pic"> <img src="" /> </div>
+						<div class="rcard_content">
+							<h3> </h3>
+							<ul>
+								<li> <img src="" /> <span> </span> </li>
+							</ul>
+							<div class="content_foot"> 
+								<span> <h2> <b> </b> <span> </span> </h2> </span>
+								<span> <button type="button" id="btndetails"> View Details <img src="images/ico3.svg" /> </button> </span> 
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	
+	
+	<!-- Residential Block Management section -->
+	<div class="block_manager_sec">
+		<div class="manager_form">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 width100">
+						<div class="content_block">
+							<img class="ico_circle" src="images/anim1.svg" />
+							<h1> <span>Residential</span> Block Management </h1>
+							<p> we understand how important it is to get the fundamentals of block management right. From ensuring compliance with current landlord and tenant legislation to observing health and safety regulations, our focus is on delivering a professional and knowledgeable service on your behalf. </p>
+							<div class="groupBtns"> <a href="https://www.mossblockmanagement.co.uk" class="btns"> Read more </a> <a href="contact.html" class="btns" style="background: transparent; color: #005595; display: flex; align-items: center;"> Contact Us <img src="images/ico3.svg" /> </a> 
+							</div>
+							<img class="ico_tringle" src="images/anim2.svg" />
+						</div>
+					</div>
+					<div class="col-md-6 width100 wow fadeInRight">
+						<div class="pics_block"> <img src="images/pic4.svg" /> </div>
+					</div>
+				</div>
+			</div>
+			<img class="ico_roundshape" src="images/anim3.svg" />
+		</div>
+	</div>
+	
+	
+	<!-- Reviews Section -->
+	<div class="reviews_sec">
+		<div class="container-fluid">
+			<div class="review_inside">
+				<div class="page_heading">
+					<h1> Reviews <span class="border_bottom"></span> </h1> <img style="max-width: 115px; display: block; margin: auto;" src="images/stars.svg" /> </div>
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="reviews_card">
+								<h6> Giacomo Rossi Prodi <span class="border_bottom"></span> </h6> <img src="images/stars.svg" />
+								<p> Just rented a house with Moss & co, the agent Ash was extremely professional, very welcoming and always putting you at ease. He helped us every time we had a problem, always finding a solution extremely fast. We could always rely on himself </p>
+								<h1> <img src="images/img1.png" /> </h1> </div>
+						</div>
+						<div class="swiper-slide">
+							<div class="reviews_card">
+								<h6> Sue <span class="border_bottom"></span> </h6> <img src="images/stars.svg" />
+								<p> We were very happy with Moss & Co as our agents! Whether it was a phone call or text message, they were always quick to respond. As we are new to Wimbledon we found them very knowledgable about the area and honest…. Dominic or Jonathan were </p>
+								<h1> <img src="images/img2.png" /> </h1> </div>
+						</div>
+						<div class="swiper-slide">
+							<div class="reviews_card">
+								<h6> Jeff Richardson <span class="border_bottom"></span> </h6> <img src="images/stars.svg" />
+								<p> I could not recommend Moss & Co highly enough. The support and genuine care I experienced in my dealings with Ash in particular were second to none. In these tight times the human approach deployed by Ash allowed myself feel at ease </p>
+								<h1> <img src="images/img1.png" /> </h1> </div>
+						</div>
+						<div class="swiper-slide">
+							<div class="reviews_card">
+								<h6> Sue <span class="border_bottom"></span> </h6> <img src="images/stars.svg" />
+								<p> We were very happy with Moss & Co as our agents! Whether it was a phone call or text message, they were always quick to respond. As we are new to Wimbledon we found them very knowledgable about the area and honest…. Dominic or Jonathan were </p>
+								<h1> <img src="images/img2.png" /> </h1> </div>
+						</div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- Footer Section -->
+	<div class="footer_sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-lg-12" style="display: flex; align-items: center;">
+					<div class="logobar"> <img src="images/logo1.svg" /> </div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-lg-12">
+					<div class="footmenu">
+						<ul>
+							<li> <a href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/85/about-us"> About us </a> </li>
+							<li> <a href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/92/sales"> Sales </a> </li>
+							<li> <a href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/87/lettings"> Lettings </a> </li>
+							<li> <a href="https://www.mossblockmanagement.co.uk"> Block Management </a> </li>
+							<li> <a href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/88/management"> Property Management </a> </li>
+							<li> <a href="#"> Property Maintenance </a> </li>
+							<!--<li> News </li>-->
+							<li> <a href="contact.html"> Contact </a> </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer_info">
+				<ul>
+					<li> <img src="images/ico8.svg" /> 020 8946 7661 </li>
+					<li> <img src="images/ico9.svg" /> 212 Copse Hill, Wimbledon, london, SW20 0SP </li>
+					<li> <img src="images/ico10.svg" /> info@mosswimbledonhill.co.uk </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer_down">
+		<div class="container">
+			<p> Moss and Co. Ltd. ©2022 | <a href="#"> Terms & Conditions </a> </p>
+		</div>
+	</div>
+	
+	
+	<!-- Javascript and CSS Styles -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/swiper-bundle.8.4.4.min.js"></script>
+	<script src="js/customselectmenu.js"></script>
+	
+	<script>
+		// initialise floating blocks
+		new WOW().init();
+	</script>
+	
+	<script>
+		// don't load gallery or swiper until pictures have been fetched from server
+		function addSwiper() {
+				var swiper = new Swiper(".mySwiper", {
+					slidesPerView: 3,
+					spaceBetween: 50,
+					centeredSlides: true,
+					grabCursor: true,
+					loop: true,
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev"
+					},
+					breakpoints: {
+						300: {
+							slidesPerView: 1
+						},
+						700: {
+							slidesPerView: 1,
+						},
+						992: {
+							slidesPerView: 2,
+						},
+						1200: {
+							slidesPerView: 3
+						}
+					}
+				});
+		}
+	</script>
+  
+	<script>
+		{ // activate the gallery
+			addSwiper();
+		}
+  </script>
+
+	<!-- code for data feed -->
+	<script src="js/autocomplete.js"></script>
+	<script src="includes/p_library.js"></script>
+	<script src="includes/p_common.js"></script>
+	<script src="includes/p_index.js"></script>
+	
+</body>
+
+</html>

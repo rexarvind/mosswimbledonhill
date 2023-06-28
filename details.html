@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Moss & Co Wimbledon</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="images/favicon.svg">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/swiper-bundle.6.8.4.min.css" />
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/customselectmenu.css">
+
+<style>
+.banner_box button:hover span {
+  display:none
+}
+
+.banner_box button:hover:before {
+  content:"View Property Brochure";
+  transition: 0.1s ease-in-out;
+}
+.swiper-wrapper .swiper-slide img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+.gallery-thumbs .swiper-slide{
+    cursor: pointer;
+}
+.swiper-slide-thumb-active {
+    border: 3px solid #005892;
+}
+</style>
+
+</head>
+
+<body>
+	
+	<!-- Floating Menu -->
+	<div class="header_sec">
+		<div class="head_bar wow fadeInDown">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<a class="navbar-brand" href="index.html"> <img src="images/logo1.png" /> </a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"> <img src="images/menubar.svg" /> </span> </button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item"> <a class="nav-link" href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/85/about-us"> About Us </a> </li>
+							<li class="nav-item"> <a class="nav-link" href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/92/sales"> Sales </a> </li>
+							<li class="nav-item"> <a class="nav-link" href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/87/lettings"> Lettings </a> </li>
+							<li class="nav-item"> <a class="nav-link" href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/88/management"> Manage </a> </li>
+							<li class="nav-item"> <a class="nav-link" href="contact.html"> Contact </a> </li>
+							<li class="nav-item"> <a class="nav-link btns" href="https://crizoconnect.co.uk/MossandCompany/property_search/register.php?bs"> Sign Up </a> </li>
+							<li class="nav-item"> <a class="nav-link transBtn" href="https://crizoconnect.co.uk/MossandCompany/mgt/login.php?bs"> Login <img src="images/ico3.svg" /> </a> </li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- Centred Banner -->
+	<div class="banner_sec">
+		<div class="container" id="banner_container">
+			<div class="banner_inside">
+				<div class="row justify-content-center">
+					<div class="col-md-7 col-lg-7 wow col-sm-10 width80">
+						<div class="banner_box">
+						  <h6 style="text-align: center; font-weight: 600; font-size: 17px; margin-bottom: 15px;"> </h6>
+							<h1> </h1>
+							<p> </p>
+							<center>
+								<button class="button" id="btnbrochure"> <span>View Property Brochure</span> </button>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- Property Search Form -->
+	<!-- if you change anything in this div then you will need to change p_search.js and p_common.js -->
+	<div class="salerent_sec">
+		<div class="container">
+			<form id="searchform">
+				<div class="salerent_form">
+					<ul style="display:none;">
+						<li>
+							<input type="radio" id="intent_buy" name="intent" value="B">
+							<label for="intent_buy"> Buy </label>
+						</li>
+						<li>
+							<input type="radio" id="intent_rent" name="intent" value="R" checked>
+							<label for="intent_rent"> Rent </label>
+						</li>
+					</ul>
+					<div class="row" style="display: flex; align-items: flex-end; position:relative;">
+						<div class="col-md-3 col-lg-3 width50">
+							<div class="form-group">
+								<label> Enter Area: </label>
+								<input type="text" class="form-control" id="Area" autocomplete="off" placeholder="" value="Wimbledon" /> </div>
+						</div>
+						
+						<div id="AreaDiv" style="position:absolute; left:50px; top:160px; min-width:205px; padding:5px 15px 10px; border-radius:20px; display:none; border:1px solid darkgrey; background-color:white; z-index:999999; cursor:pointer; text-align:left;">&nbsp;</div>
+						
+						<div class="col-md-3 col-lg-3 width50">
+							<div class="form-group">
+								<label> Bedrooms: </label>
+								<select id="Bedrooms">
+										<option value="">Any</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 col-lg-3 width50" id="intent_rent_price" style="display:inline;">
+							<div class="form-group">
+								<label> Max Price: </label>
+								<select id="Price-Rent">
+										<option value="">Any</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 col-lg-3 width50" id="intent_buy_price" style="display:none;">
+							<div class="form-group">
+								<label> Max Price: </label>
+								<select id="Price-Buy">
+										<option value="">Any</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 col-lg-3 width50">
+							<button type="button" id="btnsearch"> Search </button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<!-- Property Search Results -->
+	<!-- if you change anything in this div then you will need to change p_details.js -->	
+	<div class="detail_sec">
+		<div class="container" id="results_container">
+			
+			<!-- Spinner while fetching data -->
+			<div class="text-center" id="results_spinner">
+				<div class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
+			</div>
+			
+			<!-- Message box -->
+			<div class="text-center" id="results_message" style="display:none"> </div>
+			
+			<!-- Property display -->
+			<div class="thumbnail_pics">
+			    <div class="row">
+    			    <div class="col-md-8">
+									<div class="swiper-container gallery-top">
+											<div class="swiper-wrapper">
+													<div class="swiper-slide" style=""></div>
+											</div>
+											<!-- Add Arrows -->
+											<div class="swiper-button-next swiper-button-white"></div>
+											<div class="swiper-button-prev swiper-button-white"></div>
+									</div>
+    			    </div>
+    			    <div class="col-md-4">
+    			      <div class="merge_pic">
+									<div class="half_pics_card">
+										<a href="" data-fancybox="gallery"> <img src="" /> </a>
+									</div>
+									<div class="half_pics_card">
+										<a href="" data-fancybox="gallery"> <img src="" /> </a>
+									</div>
+								</div>
+    			    </div>
+    			</div>
+    			<div class="row">
+    			    <div class="col-md-8">
+									<div class="swiper-container gallery-thumbs">
+											<div class="swiper-wrapper">
+													<div class="swiper-slide" style=""></div>
+											</div>
+									</div>
+    			    </div>
+    			    <div class="col-md-4">
+    			        <div class="group_btns">
+    						<button type="button"> <img src="images/icon11.svg" /> Arrange a viewing </button>
+    						<button type="button"> <img src="images/icon12.svg" /> 020 8946 7661 </button>
+    						<button type="button"> <img src="images/icon13.svg" /> Email us </button>
+    					</div>
+    			    </div>
+			    </div>
+			</div>
+			<div class="overview_detail">
+				<div class="row">
+					<div class="col-md-7 col-sm-7">
+						<div class="room_detail">
+							<div class="form-group" id="property_price">
+								<label> </label>
+								<h4> </h4>
+							</div>
+							<div class="property_type">
+								<ul>
+									<li id="property_type">
+										<label> Property Type </label>
+										<h6> <img src="images/icon14.svg" /> <span> </span> </h6>
+									</li>
+									<li id="property_beds">
+										<label> Bedrooms </label>
+										<h6> <img src="images/icon15.svg" /> <span> </span> </h6>
+									</li>
+									<li id="property_dateavail">
+										<label> Date Available: </label>
+										<h6> <img src="images/icon16.svg" /> <span> </span> </h6>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="overview_sec">
+							<section>
+								<h2> Overview </h2>
+								<ul id="property_features">
+									<li> <img src="images/dot.svg" /> <span> </span> </li>
+								</ul>
+							</section>
+							<section id="property_summary">
+								<h2> Property Summary </h2>
+								<p> </p>
+							</section>
+							<section id="property_description">
+								<h2> Property Description </h2>
+								<p> </p>
+							</section>
+						</div>
+					</div>
+					<div class="col-md-5 col-sm-5" style="display: flex; align-items: end;">
+						<div class="shadow_box">
+							<div class="address_card">
+								<ul>
+									<li>
+										<span> <img src="images/icon17.svg" /> </span>
+										<span>
+											<label> Moss & Co </label>
+											<h6> 212 Copse Hill, Wimbledon, london, SW20 0SP </h6>
+										</span>
+									</li>
+									<li>
+										<span> <img src="images/icon18.svg" /> </span>
+										<span>
+											<label> Telephone: </label>
+											<h6> 020 8946 7661 </h6>
+										</span>
+									</li>
+									<li>
+										<span> <img src="images/icon19.svg" /> </span>
+										<span>
+											<label> Email: </label>
+											<h6> info@mosswimbledonhill.co.uk </h6>
+										</span>
+									</li>
+								</ul>
+							</div>
+							<div class="address_card times_card">
+								<h1> Opening Times: </h1>
+								<ul>
+									<li>
+										<span> <img src="images/icon20.svg" /> </span>
+										<span>
+											<label> Monday – Friday </label>
+											<h6> 9am to 6pm </h6>
+										</span>
+									</li>
+									<li>
+										<span> <img src="images/icon20.svg" /> </span>
+										<span>
+											<label> Saturday </label>
+											<h6> 9:30am to 4:30pm </h6>
+										</span>
+									</li>
+									<li>
+										<span> <img src="images/icon20.svg" /> </span>
+										<span>
+											<label> Sunday </label>
+											<h6> Closed </h6>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- Footer Section -->
+	<div class="footer_sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-lg-12" style="display: flex; align-items: center;">
+					<div class="logobar"> <img src="images/logo1.svg" /> </div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-lg-12">
+					<div class="footmenu">
+						<ul>
+							<li> <a href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/85/about-us"> About us </a> </li>
+							<li> <a href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/92/sales"> Sales </a> </li>
+							<li> <a href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/87/lettings"> Lettings </a> </li>
+							<li> <a href="https://www.mossblockmanagement.co.uk"> Block Management </a> </li>
+							<li> <a href="https://www.crizoconnect.co.uk/MossandCompany/company_news/news/88/management"> Property Management </a> </li>
+							<li> <a href="#"> Property Maintenance </a> </li>
+							<!--<li> News </li>-->
+							<li> <a href="contact.html"> Contact </a> </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer_info">
+				<ul>
+					<li> <img src="images/ico8.svg" /> 020 8946 7661 </li>
+					<li> <img src="images/ico9.svg" /> 212 Copse Hill, Wimbledon, london, SW20 0SP </li>
+					<li> <img src="images/ico10.svg" /> info@mosswimbledonhill.co.uk </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer_down">
+		<div class="container">
+			<p> Moss and Co. Ltd. ©2022 | <a href="#"> Terms & Conditions </a> </p>
+		</div>
+	</div>
+	
+	
+	<!-- Javascript and CSS Styles -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/swiper-bundle.6.8.4.min.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
+	<script src="js/customselectmenu.js"></script>
+	
+	<script>
+		// initialise floating blocks
+		new WOW().init();
+	</script>
+   
+   <script>
+		// don't load gallery or swiper until pictures have been fetched from server
+		function addSwiper() {
+				var galleryThumbs = new Swiper('.gallery-thumbs', {
+					spaceBetween: 10,
+					slidesPerView: 4,
+					freeMode: true,
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true,
+					breakpoints: {
+							300: {
+								slidesPerView: 4,
+								spaceBetween: 5,
+							}
+						}
+				});
+				var galleryTop = new Swiper('.gallery-top', {
+					spaceBetween: 10,
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+					thumbs: {
+						swiper: galleryThumbs
+					}
+				});
+		}
+  </script>
+  
+  <style>
+			/* css for gallery/swiper */
+			
+     .gallery-thumbs .swiper-slide{
+         height: 130px;
+         background-size: cover;
+     } 
+     .gallery-top .swiper-slide {
+				height: 545px;
+				background-size: cover;
+				border-radius: 15px;
+		}
+     .gallery-thumbs{
+         margin-top: 15px;
+     }
+     .swiper-button-next, .swiper-container-rtl .swiper-button-prev,
+     .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+         width: 40px;
+         height: 40px;
+     }
+     .fancybox-container{
+         z-index: 999999;
+     }
+  </style>
+  
+  <script>
+		// don't load gallery or swiper until pictures have been fetched from server
+		function addSwiperSlide() {
+    	$('.gallery-top .swiper-slide').each(function(){
+    		$(this).wrapAll('<a href="" data-fancybox="gallery"></a>');
+    	});
+    
+    	$('.gallery-top a').each(function(){
+    		var link = $(this).children('.swiper-slide').css('background-image');
+    		link = link.replace(/(url\(|\)|")/g,'');
+    		$(this).attr('href', link);
+    	});
+    
+    	$("[data-fancybox]").fancybox({
+    		loop: true,
+    		buttons: [
+    	        "zoom",
+    	        "share",
+    	        "slideShow",
+    	        "fullScreen",
+    	        "download",
+    	        "thumbs",
+    	        "close"
+    	    ]		
+    	});
+		}    
+  </script>
+
+	<!-- code for data feed -->
+	<script src="js/autocomplete.js"></script>
+	<script src="includes/p_library.js"></script>
+	<script src="includes/p_common.js"></script>
+	<script src="includes/p_details.js"></script>
+	
+</body>
+
+</html>
