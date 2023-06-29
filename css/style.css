@@ -1773,7 +1773,9 @@ span.border_bottom{
 }
 
 
-
+@media (min-width:1800px) {
+    .banner_sec {min-height:calc(100vh - 70px);}
+}
 
 
 
