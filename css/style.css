@@ -221,7 +221,10 @@ body{
 }
 
 .salerent_form select{
-    pointer-events: none;
+    pointer-events: auto !important;
+    background-image: url("../images/icons/select-icon.png") !important;
+    background-repeat:no-repeat !important;
+    background-position: right 15px center !important;
 }
 
 .salerent_form ul{
