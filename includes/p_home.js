@@ -16,13 +16,46 @@ function site_ready(callbackFunc) {
 }
 
 site_ready(function () {
-    var rcard_review_box = document.querySelectorAll('.rcard_review_box');
+    var rcard_review_box = document.querySelectorAll('.rcard_review_box_btn');
     if (rcard_review_box) {
         for (var i = 0; i < rcard_review_box.length; i++) {
-            rcard_review_box[i].addEventListener('click', function () {
-                console.log(this);
+            rcard_review_box[i].addEventListener('click', function (e) {
+                e.stopPropagation();
+                var el = this;
+                if(el.parentNode.classList.contains('active')){
+                    el.parentNode.classList.remove('active');
+                } else {
+                    el.parentNode.classList.add('active');
+                }
             });
         }
     }
+
+    window.addEventListener('click', function(e){
+        rcard_review_open_box = document.querySelectorAll('.rcard_review_box.active');
+        if(rcard_review_open_box){
+            const isClosest = e.target.closest('.rcard_review_box');
+            for (var i = 0; i < rcard_review_open_box.length; i++) {
+                if ( isClosest == null ) {
+                    rcard_review_open_box[i].classList.remove('active');
+                }
+            }
+        }
+
+    });
+
+
+    var review_pop_swiper = document.querySelectorAll('.review-pop-swiper');
+    if (review_pop_swiper) {
+        var review_pop_swipers = new Swiper('.review-pop-swiper', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
+
+
 
 });

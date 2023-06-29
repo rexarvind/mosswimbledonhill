@@ -395,6 +395,102 @@ body{
     opacity:1;
 }
 
+.rcard_review_popup {
+    opacity:0;
+    pointer-events:none;
+    position:absolute;
+    width:264px;
+    background-color:#ffffff;
+    color: #000000;
+    z-index:1;
+    left:-25px;
+    padding:16px;
+    margin-top:40px;
+    border-radius: 14px;
+    box-shadow: 0px 3px 34px 20px rgba(0, 0, 0, 0.08);
+    transition:all 200ms ease;
+}
+
+.rcard_review_box.active .rcard_review_popup {
+    opacity:1;
+    margin-top:15px;
+    pointer-events:auto;
+}
+
+
+.rcard_review_popup::before {
+    content: "";
+    display:inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 12.5px 25px 12.5px;
+    border-color: transparent transparent #ffffff transparent;
+    position:absolute;
+    left:84px;
+    top:-15px;
+}
+
+.rcard_review_popup .review-pop-swiper {
+    padding:0;
+}
+
+.review-pop-swiper-title {
+    font-size: 16px;
+    margin-bottom:0;
+    font-weight:700;
+    display:inline-block;
+    border-bottom:1px solid #000000;
+}
+
+.rcard_review_popup .review-pop-swiper .review-pop-swiper-stars {
+    margin-bottom: 5px;
+}
+
+.rcard_review_popup .review-pop-swiper .review-pop-swiper-stars img {
+    width:15px;
+    height:15px;
+    margin-left:-1px;
+    margin-right:-1px;
+    display:inline-block;
+}
+
+.review-pop-swiper-content {
+    font-size:12px;
+    font-weight:400;
+    margin-bottom:16px;
+}
+
+.review-pop-swiper-btns {
+    gap:10px;
+    display:flex;
+    position:relative;
+    align-items:center;
+    justify-content:center;
+    flex-direction:row-reverse;
+}
+
+.review-pop-swiper-btns .swiper-button-next,
+.review-pop-swiper-btns .swiper-button-prev {
+    top:0;
+    left:0;
+    right:0;
+    width:20px;
+    height:20px;
+    margin-top:0;
+    position:static;
+    box-shadow:none;
+    background-size:6px;
+    border:1px solid #000000;
+}
+
+.review-pop-swiper-btns .swiper-button-next {
+    background-image:url("../images/icons/arrow-left.svg");
+}
+.review-pop-swiper-btns .swiper-button-prev {
+    background-image:url("../images/icons/arrow-right.svg");
+}
+
 .rcard_content {
     width: 100%;
     background: #fff;
