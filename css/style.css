@@ -398,6 +398,10 @@ body{
     opacity:1;
 }
 
+.rcard_review_box_btn {
+    text-align:right;
+}
+
 .rcard_review_popup {
     opacity:0;
     pointer-events:none;
