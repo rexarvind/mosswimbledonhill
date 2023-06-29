@@ -403,7 +403,8 @@ body{
     background-color:#ffffff;
     color: #000000;
     z-index:1;
-    left:-25px;
+    left:auto;
+    right:-15px;
     padding:16px;
     margin-top:40px;
     border-radius: 14px;
@@ -417,6 +418,15 @@ body{
     pointer-events:auto;
 }
 
+@media(min-width:992px){
+    .rcard_review_box .rcard_review_popup_shift {
+        left:0;
+    }
+    .rcard_review_box .rcard_review_popup_shift::before {
+        left:60px;
+        right:auto;
+    }
+}
 
 .rcard_review_popup::before {
     content: "";
@@ -427,7 +437,8 @@ body{
     border-width: 0 12.5px 25px 12.5px;
     border-color: transparent transparent #ffffff transparent;
     position:absolute;
-    left:84px;
+    left:auto;
+    right:24px;
     top:-15px;
 }
 
