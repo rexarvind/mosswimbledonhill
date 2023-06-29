@@ -1497,9 +1497,9 @@ span.border_bottom{
 
 @media (min-width:1800px) {
     .banner_sec {
-        min-height:calc(100vh - 70px);
-        padding-top:45px;
-        padding-bottom:45px;
+        min-height:calc(100vh - 145px);
+        padding-top:20px;
+        padding-bottom:20px;
     }
 }
 
